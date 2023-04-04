@@ -10,13 +10,13 @@ using System.Text.RegularExpressions;
 
 namespace 贵州省干部在线学习助手
 {
-    public class rufa
+    public class hngbjy
     {
         public static void FiddlerApplication_BeforeRequest(Session oSession)
         {
             if (
-                (oSession.url.IndexOf("/fxweb/subpage/legalpublicity/fx_regulations.html?") > 0) ||
-                (oSession.url.IndexOf("/onlineanswer/os?") > 0) ||
+                (oSession.url.IndexOf("/Content/commonPages/play.js") > 0) ||
+                (oSession.url.IndexOf("/api/Home/Play") > 0) ||
                 (oSession.url.IndexOf("/js/examination.js") > 0)||//http://exam.rufa.gov.cn/rufawebsite/assets/js/examination.js?v=2018082701
                 (oSession.url.IndexOf("/goexamination") > 0) //http://exam.rufa.gov.cn/rufawebsite/examination/content/goexamination
                 )
@@ -44,38 +44,16 @@ namespace 贵州省干部在线学习助手
 
         public static void FiddlerApplication_BeforeResponse(Session oSession)
         {
-            if (oSession.url.IndexOf("/onlineanswer/os?") > 0)
+            if (oSession.url.IndexOf("/Content/commonPages/play.js") > 0)
             {
                 oSession.utilDecodeResponse();
-                using (StreamWriter tw = new StreamWriter(Application.StartupPath + @"\1.txt", true))
-                {
-                    tw.WriteLine(oSession.GetResponseBodyAsString());
-                }
+                bool r = oSession.utilReplaceInResponse("  close();", "debugger;");
+                r = oSession.utilReplaceInResponse("document.getElementsByTagName(\"body\")[0].innerHTML = \"\";", "");
             }
-            else if (oSession.url.IndexOf("/fxweb/subpage/legalpublicity/fx_regulations.html?") > 0)
+            else if (oSession.url.IndexOf("/api/Home/Play") > 0)
             {
                 oSession.utilDecodeResponse();
-                string js = @"
-                            
-
-                        ";
-                string jsstr = @"
-                            var i=0;
-                            function jc(){
-                                if($('#btn_code').length>0&&$('#btn_code').attr('disabled')==undefined){
-                                    if(i%2==0){
-                                        $('.neiinput').find(""[correct='1']"").click();
-                                    }else{
-                                          $('#btn_code').click();
-                                    }
-                                    i++;
-                                }else{
-                                    $('.next').click();
-                                }
-                            } 
-                            
-                        ";
-                bool r = oSession.utilReplaceInResponse("</body>", "<script type=\"text/javascript\">function go(){" + js + "}" + jsstr + " setInterval(function(){jc()},Math.round(Math.random()*50)*1000+30*1000);</script></body>");
+                bool r = oSession.utilReplaceInResponse("\"Content\":5,", "\"Content\":null,");
 
 
 

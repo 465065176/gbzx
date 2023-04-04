@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>贵州省干部在线学习助手</RootNamespace>
-    <AssemblyName>贵州省干部在线学习助手</AssemblyName>
+    <AssemblyName>干部在线学习助手</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,11 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FiddlerCore4">
-      <HintPath>..\..\..\Fiddler\FiddlerCoreAPI\DotNet4\FiddlerCore4.dll</HintPath>
+    <Reference Include="FiddlerCore4, Version=4.5.1.0, Culture=neutral, PublicKeyToken=67cb91587178ac5a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Fiddler\FiddlerCoreAPI46\FiddlerCore4.dll</HintPath>
     </Reference>
-    <Reference Include="FXNsfsET2342342wrfs">
-      <HintPath>F:\任务管理\FXNsfsET2342342wrfs.dll</HintPath>
+    <Reference Include="FXNsfsET2342342wrfs, Version=2014.9.30.14, Culture=neutral, PublicKeyToken=60cd1cd4ec6d8739, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\FX\FXNsfsET2342342wrfs.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\json\net40\Newtonsoft.Json.dll</HintPath>
@@ -53,13 +58,55 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Xilium.CefGlue">
-      <HintPath>..\CefGlue\bin\Debug\Xilium.CefGlue.dll</HintPath>
+    <Reference Include="WebHelper4240">
+      <HintPath>..\WebHelper\WebHelper4240\bin\Debug\WebHelper4240.dll</HintPath>
+    </Reference>
+    <Reference Include="Xilium.CefGlue, Version=57.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\cefglue-4240\CefGlue.WindowsForms\bin\Debug\Xilium.CefGlue.dll</HintPath>
+    </Reference>
+    <Reference Include="Xilium.CefGlue.WindowsForms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\cefglue-4240\CefGlue.WindowsForms\bin\Debug\Xilium.CefGlue.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="验证码识别, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\验证码识别\验证码识别\bin\Debug\验证码识别.exe</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessHelper.cs" />
+    <Compile Include="222.178.69.178.cs" />
+    <Compile Include="203.93.109.222.cs" />
     <Compile Include="Common\MyCefApp.cs" />
+    <Compile Include="91huayi.com.cs" />
+    <Compile Include="mchtraweb.chinawch.org.cn.cs" />
+    <Compile Include="hn.ischinese.cn.cs" />
+    <Compile Include="gzhkzy.cjnep.net.cs" />
+    <Compile Include="gz-smch-home.chengdumaixun.com.cs" />
+    <Compile Include="Renderer\FXRenderProcessHandler.cs" />
+    <Compile Include="www.dmhhyy.com.cs" />
+    <Compile Include="newnhc-p.webtrn.cn.cs" />
+    <Compile Include="Renderer\DemoRenderProcessHandler.cs" />
+    <Compile Include="Renderer\ExampleAv8Handler.cs" />
+    <Compile Include="weixin.haoyisheng.com.cs" />
+    <Compile Include="hn.webtrn.cn.cs" />
+    <Compile Include="guizhou.zxjxjy.com.cs" />
+    <Compile Include="gzwy.gov.cn.cs" />
+    <Compile Include="www.hnsydwpx.cn.cs" />
+    <Compile Include="www.ejxjy.com.cs" />
+    <Compile Include="wlcb.zgrsw.cn.cs" />
+    <Compile Include="SourceVisitor .cs" />
+    <Compile Include="teacheredu.cn.cs" />
+    <Compile Include="yanxiu.com.cs" />
+    <Compile Include="新疆基础教育资源公共服务平台edu.xjcxedu.com.cs" />
+    <Compile Include="qdjj.59iedu.com.cs" />
+    <Compile Include="青书堂.cs" />
+    <Compile Include="yanxiuonline.com.cs" />
+    <Compile Include="www.ggcjxjy.cn.cs" />
+    <Compile Include="mooc1.chaoxing.com.cs" />
+    <Compile Include="www.hngbjy.com.cs" />
+    <Compile Include="www.wlmqpxw.com.cs" />
+    <Compile Include="AccessHelper.cs" />
     <Compile Include="DAL\CourseDAL.cs" />
     <Compile Include="DAL\ExamsDAL.cs" />
     <Compile Include="DAL\TEMPDAL.cs" />
@@ -73,6 +120,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="web.chinahrt.com.cs" />
     <Compile Include="123.249.79.44.cs" />
+    <Compile Include="site.bbtree.com.cs" />
     <Compile Include="xfks.qnfzw.gov.cn.cs" />
     <Compile Include="www.zgzjzj.com.cs" />
     <Compile Include="www.rufa.gov.cn.cs" />
@@ -99,6 +147,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

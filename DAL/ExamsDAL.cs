@@ -13,10 +13,6 @@
         {
             return AccessHelper.ExecuteSql(string.Concat(new object[] { "UPDATE [Exams] SET ExamAnswer='", ExamAnswer, "',ExamAnswerVerify=false", " WHERE (ID=", id, ");" }));
         }
-        public static int UpExam(int id, string ExamAnswer, bool ExamAnswerVerify)
-        {
-            return AccessHelper.ExecuteSql(string.Concat(new object[] { "UPDATE [Exams] SET ExamAnswer='", ExamAnswer, "',ExamAnswerVerify=",ExamAnswerVerify," WHERE (ID=", id, ");" }));
-        }
         public static int UpExam(int id, bool ExamAnswerVerify)
         {
             return AccessHelper.ExecuteSql(string.Concat(new object[] { "UPDATE [Exams] SET ExamAnswerVerify=", ExamAnswerVerify, " WHERE (ID=", id, ");" }));
@@ -24,6 +20,10 @@
         public static int UpExam(string ExamTitle, bool ExamAnswerVerify)
         {
             return AccessHelper.ExecuteSql(string.Concat(new object[] { "UPDATE [Exams] SET ExamAnswerVerify=", ExamAnswerVerify, " WHERE (ExamTitle='", ExamTitle, "');" }));
+        }
+        public static int DelExam(int id)
+        {
+            return AccessHelper.ExecuteSql(string.Concat(new object[] { "delete from [Exams]  WHERE (ID=", id, ");" }));
         }
         public static DataTable getExams(int CourseId)
         {
